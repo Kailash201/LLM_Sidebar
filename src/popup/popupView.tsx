@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import addTypingBox from '../content/addTypingBox';
 import removeBoxes from '../content/removeTypingBox';
 import saveWebPage from '../content/saveWebPage'
+import addSidebar from '../content/sideBar';
 
 const Popup = () => {
 
@@ -17,10 +18,17 @@ const Popup = () => {
             const response = await chrome.tabs.sendMessage(tab.id!, { greeting: "getBlockCount" });
             //setBlockCount(response['reply'])
 
+            // chrome.scripting.executeScript({
+            //     target: { tabId: tab.id!, allFrames: true },
+            //     func: (a: number) => { addTypingBox(a) },
+            //     args: [response['reply']]
+            // })
+
             chrome.scripting.executeScript({
                 target: { tabId: tab.id!, allFrames: true },
-                func: (a: number) => { addTypingBox(a) },
-                args: [response['reply']]
+                func: () => { addSidebar() },
+            }, () => {
+                console.log('add nav bar command executed');
             })
         }
 
