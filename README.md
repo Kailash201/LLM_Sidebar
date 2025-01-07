@@ -1,46 +1,48 @@
-# Getting Started with Create React App
+# Chrome Extension Installation Guide (Developer Mode)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This guide explains how to install the Chrome extension in your browser in developer mode using the contents of the `dist` folder.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Prerequisites
 
-### `npm start`
+Before installing, ensure you have the following:
+- Google Chrome or any Chromium-based browser (e.g., Edge, Brave).
+- Access to the `dist` folder containing the built extension files.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Steps to Install
 
-### `npm test`
+1. **Open Chrome Extensions Page**
+   - Open your Chrome browser.
+   - Navigate to `chrome://extensions` by typing it into the address bar and pressing Enter.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. **Enable Developer Mode**
+   - In the top-right corner of the Extensions page, toggle the switch for "Developer mode" to enable it.
 
-### `npm run build`
+3. **Load the Extension**
+   - Click the "Load unpacked" button in the top-left corner of the Extensions page.
+   - In the file picker dialog that appears, navigate to the `dist` folder from this project and select it.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+4. **Verify the Extension**
+   - The extension should now appear in your list of installed extensions.
+   - Ensure it is enabled by toggling the switch next to it.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Troubleshooting
 
-### `npm run eject`
+- **Missing `dist` folder**: Ensure that the project has been built. If the folder is missing, run the build script for your project (e.g., `npm run build` or `yarn build`) to generate the `dist` folder.
+- **Errors during installation**: Double-check that all required files are present in the `dist` folder, including `manifest.json`.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Notes
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Changes to the source code will require rebuilding the extension and reloading it in Chrome.
+- For testing or debugging purposes, open the extension in Chrome and click "Inspect views: background page" for logs and errors.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+---
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+If you encounter any issues or have questions, feel free to reach out for support!
