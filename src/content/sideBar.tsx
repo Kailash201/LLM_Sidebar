@@ -47,7 +47,7 @@ const addSidebar = () => {
         flex-direction: column;
         height: 100%;
         width: 30%;
-        background-color:rgb(22, 0, 20);
+        background-color:rgb(47, 3, 43);
         position: fixed;
         top: 0;
         right: 0;
@@ -109,10 +109,10 @@ const addSidebar = () => {
         height: 8%;
         width: 100%;
         margin-top: auto;
-        margin-bottom: 1em;
         background-color: #decbc3;
         border: none;
         padding: 2%;
+        font-size: smaller;
     }
     
     .sec0 {
@@ -139,7 +139,6 @@ const addSidebar = () => {
     .input {
         width: 30%;
         border-radius: 10px;
-        height: 30%;
         background-color: #decbc3;
         border: none;
         font-size: smaller;
