@@ -1,46 +1,79 @@
-# Getting Started with Create React App
+# Chrome Extension: Sidebar LLM Query Assistant
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This Chrome extension leverages powerful Large Language Models (LLMs) to enhance your browsing experience. With support for both **OpenAI** and **Gemini** models, users can integrate their own API keys, select their preferred model, and interact seamlessly with LLMs directly from the browser.
 
-## Available Scripts
+The extension functions as a **sidebar tool** that allows users to select text from any webpage to provide context and perform queries based on that context. Whether you're summarizing articles, extracting key information, or asking follow-up questions, this extension makes it easy to utilize advanced AI capabilities while browsing.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Key Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **LLM Support**: Currently supports OpenAI and Gemini models, with more to be added in the future.
+- **Custom API Key Integration**: Users can securely enter their API key for the chosen LLM service.
+- **Model Selection**: Flexibly switch between models based on your needs.
+- **Contextual Queries**: Select text directly from a webpage to use as context for your queries.
+- **Intuitive Sidebar Interface**: Access the extension quickly from the browser's sidebar for a streamlined workflow.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## Installation Guide (Developer Mode)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+Before installing, ensure you have the following:
+- Google Chrome or any Chromium-based browser (e.g., Edge, Brave).
+- Access to the `dist` folder containing the built extension files.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Steps to Install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. **Open Chrome Extensions Page**
+   - Open your Chrome browser.
+   - Navigate to `chrome://extensions` by typing it into the address bar and pressing Enter.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. **Enable Developer Mode**
+   - In the top-right corner of the Extensions page, toggle the switch for "Developer mode" to enable it.
 
-### `npm run eject`
+3. **Load the Extension**
+   - Click the "Load unpacked" button in the top-left corner of the Extensions page.
+   - In the file picker dialog that appears, navigate to the `dist` folder from this project and select it.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+4. **Verify the Extension**
+   - The extension should now appear in your list of installed extensions.
+   - Ensure it is enabled by toggling the switch next to it.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Usage Instructions
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. **Open the Sidebar**
+   - Click on the extension icon in the browser toolbar to open the sidebar.
 
-## Learn More
+2. **Enter Your API Key**
+   - In the sidebar, input your API key for either OpenAI or Gemini under the settings tab. This key will allow the extension to interact with the selected LLM.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3. **Enter Your LLM Model**
+   - Choose your preferred model by just typing the model name.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+4. **Select Text and Query**
+   - Highlight any text on a webpage to use it as context.
+   - Use the query input box in the sidebar to ask questions or perform tasks related to the selected context.
+
+5. **View Results**
+   - The response from the LLM will be displayed directly in the sidebar.
+
+---
+
+## Troubleshooting
+
+- **Missing `dist` folder**: Ensure that the project has been built. If the folder is missing, run the build script for your project (e.g., `npm run build` or `yarn build`) to generate the `dist` folder.
+- **No Response from the LLM**: Double-check your API key and model selection. Ensure your API key has sufficient permissions and usage quota.
+
+---
+
+## Contributing
+I welcome contributions! If you'd like to help improve this extension, please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Submit a pull request detailing your changes.
+
