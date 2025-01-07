@@ -22,9 +22,10 @@ const addSidebar = () => {
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
     body {
-        margin-right: 20em; /* Shift content to the right */
+        margin-right: 30%; /* Shift content to the right */
         transition: margin-left 0.3s ease; /* Smooth transition */
         font-family: 'Roboto', sans-serif;
+        height: 100%
     }
 
     div::-webkit-scrollbar {
@@ -44,8 +45,8 @@ const addSidebar = () => {
     .main {
         display: flex;
         flex-direction: column;
-        height: 100vh;
-        width: 20em;
+        height: 100%;
+        width: 30%;
         background-color:rgb(36, 0, 32);
         position: fixed;
         top: 0;
