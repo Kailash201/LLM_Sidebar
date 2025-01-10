@@ -1,5 +1,7 @@
 # Chrome Extension: Sidebar LLM Query Assistant
 
+![Demo Image](src/assests/images/demo_pic.png)
+
 This Chrome extension leverages powerful Large Language Models (LLMs) to enhance your browsing experience. With support for both **OpenAI** and **Gemini** models, users can integrate their own API keys, select their preferred model, and interact seamlessly with LLMs directly from the browser.
 
 The extension functions as a **sidebar tool** that allows users to select text from any webpage to provide context and perform queries based on that context. Whether you're summarizing articles, extracting key information, or asking follow-up questions, this extension makes it easy to utilize advanced AI capabilities while browsing.

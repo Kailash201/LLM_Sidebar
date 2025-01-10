@@ -17,7 +17,8 @@ const createUserTbElement = (userText: string) => {
 }
 
 const addSidebar = () => {
-    const knowledgeDb: string[]= []
+    const knowledgeDb: Record<number, string> = {}
+    let cardId: number = 0
     const navbarstyle = `
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
@@ -60,6 +61,8 @@ const addSidebar = () => {
         display: flex;
         gap: 0.5em;
         flex-wrap: wrap;
+        overflow-y: auto;
+        height: 90%;
     }
 
     .card {
@@ -79,6 +82,8 @@ const addSidebar = () => {
         display: flex;
         flex-direction: column;
         gap: 1em;
+        overflow-y: auto;
+        height: 90%;
     }
     
     .userBox {
@@ -109,6 +114,7 @@ const addSidebar = () => {
         height: 8%;
         width: 100%;
         margin-top: auto;
+        margin-bottom: auto;
         background-color: #decbc3;
         border: none;
         padding: 2%;
@@ -127,13 +133,11 @@ const addSidebar = () => {
     .sec1 {
         min-height:25%;
         max-height:25%;
-        overflow-y: auto;
     }
 
     .sec2 {
         min-height: 50%;
         max-height: 50%;
-        overflow-y: auto;
     }
 
     .input {
@@ -207,25 +211,41 @@ const addSidebar = () => {
 
     document.body.appendChild(navbar);
 
+    ////////Handling creation of knowledge cards//////////////////
+    const deleteCard = (event: any) => {
+        const id = parseInt(event.target.id)
+        console.log(id)
+        delete knowledgeDb[id]
+        console.log(knowledgeDb)
+        loadKb()
+    }
+
+    const loadKb = () => {
+        const knowContainer = document.getElementById('cards')
+        knowContainer!.innerHTML = ``
+        Object.keys(knowledgeDb).forEach((key: any) => {
+            const card = document.createElement('div')
+            const textHtml = document.createElement('p')
+            card.appendChild(textHtml)
+            card.className = 'card point'
+            textHtml.innerText = knowledgeDb[key]
+            knowContainer?.appendChild(card)
+            card.id = key.toString()
+            textHtml.id = key.toString()
+            card.addEventListener("click", (event) => deleteCard(event))
+            textHtml.addEventListener("click", (event) => deleteCard(event))
+        })      
+    }
+
     document.addEventListener('mouseup', () => {
         const userText = selectedText().trim()
        
         console.log(userText)
         if (userText) {
-            knowledgeDb.push(userText)
+            knowledgeDb[cardId] = userText
+            loadKb()
+            cardId = cardId + 1
         }
-
-        const knowContainer = document.getElementById('cards')
-        knowContainer!.innerHTML = ``
-        knowledgeDb.map((each: string) => {
-            const card = document.createElement('div')
-            const textHtml = document.createElement('p')
-            card.appendChild(textHtml)
-            card.className = 'card'
-            textHtml.innerText = each
-            knowContainer?.appendChild(card)
-        })
-      
     })
 
     ////////// HANDLING CHANGE IN MODEL ////////////////////
